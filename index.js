@@ -2,6 +2,27 @@ function hasTargetSum(array, target) {
   // Write your algorithm here
 }
 
+function hasTargetSum(array, target) {
+
+  const visitedNumbers = {};
+
+
+  for (let i = 0; i < array.length; i++) {
+    const difference = target - array[i];
+
+    if (visitedNumbers[difference]) {
+      return true;
+    }
+
+    visitedNumbers[array[i]] = true;
+  }
+
+  return false;
+}
+
+module.exports = hasTargetSum;
+
+
 /* 
   Write the Big O time complexity of your function here
 */
